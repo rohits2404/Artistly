@@ -4,7 +4,6 @@ import React from "react"
 import { useState, useMemo, Suspense } from "react"
 import ArtistCard from "./artists-card"
 import ArtistFilters from "./artist-filters"
-import ArtistListingSkeleton from "./artist-listing-skeleton"
 import { mockArtists } from "@/lib/mock-data"
 import type { FilterState } from "@/types"
 
@@ -68,9 +67,7 @@ function ArtistListingContent() {
 
 const ArtistListing = () => {
     return (
-        <Suspense fallback={<ArtistListingSkeleton />}>
-            <ArtistListingContent />
-        </Suspense>
+        <ArtistListingContent />
     )
 }
 
